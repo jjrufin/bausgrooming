@@ -1,0 +1,140 @@
+/*
+ * jQuery FlexSlider v2.2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none; z-index: 300;}
+.flexslider {margin: 0; padding: 0;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;}
+.flexslider .slides img {width: 100%; display: block;}
+.flex-control-thumbs img {cursor:pointer;}
+.flex-pauseplay span {text-transform: capitalize;}
+.slides:after {content: "\0020"; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+.no-js .slides > li:first-child {display: block;}
+.flexslider {overflow:hidden; position: relative; z-index:2;}
+.flex-viewport { max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; }
+.loading .flex-viewport { max-height: 300px; }
+.flexslider .slides { zoom: 1; }
+.carousel li { margin-right: 5px; }
+
+
+/* Direction Nav
+*********************************/
+.flexslider .flex-direction-nav a {
+    z-index: 9999;
+    text-align: center;
+    display: block;
+    width: 60px;
+    height: 60px;
+    outline: 0;
+    top: 50%;
+    margin-top: -30px;
+    background-color: #f96868;
+    box-shadow: 0 -3px 0 rgba(0, 0, 0, 0.133) inset;
+    color: #fff;
+    border-radius: 2px;
+    -webkit-transition: background 0.3s ease-in-out;
+       -moz-transition: background 0.3s ease-in-out;
+        -ms-transition: background 0.3s ease-in-out;
+         -o-transition: background 0.3s ease-in-out;
+            transition: background 0.3s ease-in-out;   
+}
+
+.flexslider .flex-direction-nav a:hover,
+.flexslider .flex-direction-nav a:focus {
+    background-color: #4d4d4d;
+    text-decoration: none;
+    color: #fff;
+}
+
+.flexslider .flex-direction-nav .flex-prev {
+    position: absolute;
+    left: 0;
+}
+
+.flexslider .flex-direction-nav .flex-next {
+    position: absolute;
+    right: 0;
+}
+
+.flexslider .flex-direction-nav i {
+    font-size: 40px;
+    line-height: 66px;
+}
+
+/* Control Nav
+*********************************/
+.flexslider .flex-control-nav {
+    position: absolute;
+    bottom: 27px;
+    width: 100%;
+    text-align: center;
+}
+
+.flexslider .flex-control-nav li {
+    margin: 0 3px;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+.flexslider .flex-control-nav li a {
+    z-index: 9999px;
+    width: 7px;
+    height: 7px;
+    display: block;
+    background-color: #4d4d4d;
+    cursor: pointer;
+    text-indent: -9999px;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+         -o-border-radius: 50%;
+            border-radius: 50%;
+}
+
+.flexslider .flex-control-nav li a.flex-active {
+    background-color: #fff; 
+}
+
+
+.GhostIn, .FromTop, .FromRight, .FromBottom, .FromLeft {opacity: 0; transition: all 0.7s ; -webkit-transition: all 0.7s ;}
+
+.flexslider li.flex-active-slide .GhostIn {opacity: 1;}
+
+.flexslider li .FromTop {transform: translateY(-100%); -o-transform: translateY(-100%); -ms-transform: translateY(-100%); -webkit-transform: translateY(-100%);}
+.flexslider li.flex-active-slide .FromTop {opacity: 1; transform: translateY(0); -o-transform: translateY(0%); -ms-transform: translateY(0); -webkit-transform: translateY(0);}
+
+.flexslider li .FromBottom {transform: translateY(100%); -o-transform: translateY(100%); -ms-transform: translateY(100%); -webkit-transform: translateY(100%);}
+.flexslider li.flex-active-slide .FromBottom {opacity: 1; transform: translateY(0); -o-transform: translateY(0); -ms-transform: translateY(0); -webkit-transform: translateY(0);}
+
+.flexslider li .FromLeft {transform: translateX(-100%); -o-transform: translateX(-100%); -ms-transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+.flexslider li.flex-active-slide .FromLeft {opacity: 1; transform: translateX(0); -o-transform: translateX(0); -ms-transform: translateX(0); -webkit-transform: translateX(0);}
+
+.flexslider li .FromRight {transform: translateX(100%); -o-transform: translateX(100%); -ms-transform: translateX(100%); -webkit-transform: translateX(100%);}
+.flexslider li.flex-active-slide .FromRight {opacity: 1; transform: translateX(0); -o-transform: translateX(0); -ms-transform: translateX(0); -webkit-transform: translateX(0);}
+
+.captionDelay1 {transition-delay: 0.1s; -webkit-transition-delay: 0.1s;}
+.captionDelay2 {transition-delay: 0.2s; -webkit-transition-delay: 0.2s;}
+.captionDelay3 {transition-delay: 0.3s; -webkit-transition-delay: 0.3s;}
+.captionDelay4 {transition-delay: 0.4s; -webkit-transition-delay: 0.4s;}
+.captionDelay5 {transition-delay: 0.5s; -webkit-transition-delay: 0.5s;}
+.captionDelay6 {transition-delay: 0.6s; -webkit-transition-delay: 0.6s;}
+.captionDelay7 {transition-delay: 0.7s; -webkit-transition-delay: 0.7s;}
+.captionDelay8 {transition-delay: 0.8s; -webkit-transition-delay: 0.8s;}
+.captionDelay9 {transition-delay: 0.9s; -webkit-transition-delay: 0.9s;}
+.captionDelay10 {transition-delay: 1s; -webkit-transition-delay: 1s;}
+
