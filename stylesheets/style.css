@@ -3037,3 +3037,7 @@ iframe, object, embed {
 .bookbg {
 	padding-top: 90px;
 }
+
+.socials {
+	display: inline;
+}
