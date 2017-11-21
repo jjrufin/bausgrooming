@@ -2930,6 +2930,10 @@ div.healcode h1 {
 	text-align: center;
 }
 
+div.healcode a {
+	font-weight: bold;
+}
+
 
 /*New Footer*/
 footer {
@@ -3040,4 +3044,12 @@ iframe, object, embed {
 
 .socials {
 	display: inline;
+}
+
+.gPlay {
+	width: 155px;
+}
+
+.black-text {
+	color: black;
 }
